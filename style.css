@@ -256,13 +256,13 @@ img { max-width: 100%; display: block; }
   font-optical-sizing: auto;
 }
 
-/* accent rule starting right after "Hi, I'm", stretching right to the end of "Alexandra" */
+/* accent rule starting right after "Hi, I'm", stretching right to the end of "Palermo" */
 .hero h1::after {
   content: '';
   position: absolute;
   left: 2.05em;
   top: 0.62em;
-  width: 3em;
+  width: 2.1em;
   height: 2px;
   background: var(--accent);
 }
