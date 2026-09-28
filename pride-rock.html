@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Circle of Life Game — Alexandra Palermo</title>
+<meta name="description" content="The Circle of Life Game, Lion King Edition — a two-player C++ board game built by Alexandra Palermo for her data structures course.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Jost:wght@400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=37">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav id="nav">
+  <a href="index.html#top" class="nav-mark">AP</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="project-hero">
+  <div class="project-hero-content">
+    <a href="index.html#work" class="back-link">← Back to work</a>
+    <p class="eyebrow">Solo Project</p>
+    <h1>The Circle of Life Game</h1>
+    <p class="project-hero-desc">A two-player Lion King board game I built for my data structures course. Pick a character, choose a path, and race down a randomly generated, full-color track — whoever's racked up more Pride Points by Pride Rock wins.</p>
+    <div class="project-hero-links">
+      <span class="link-disabled">Repo — not yet public</span>
+    </div>
+    <div class="project-keys">
+      <span class="tag">SOLO PROJECT</span>
+      <span class="tag">C++</span>
+      <span class="tag">DATA STRUCTURES</span>
+      <span class="tag">FILE I/O</span>
+      <span class="tag">OBJECT ORIENTED</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">How It Plays</p>
+      <h2>A choice-driven console RPG</h2>
+    </div>
+    <ul class="role-list">
+      <li><strong>Character Select</strong> — Five lion characters (Apollo, Mane, Elsa, Zuri, Roary), loaded in from <code>characters.txt</code> at runtime, each starting with different Strength, Stamina, and Wisdom.</li>
+      <li><strong>Two Paths</strong> — Cub Training gets you a stat boost and an advisor pick right away, but costs 5,000 Pride Points. Going straight to Pride Lands is the opposite: points now, weaker stats.</li>
+      <li><strong>Five Advisors</strong> — Rafiki, Nala, Sarabi, Zazu, and Sarafina, each with their own ability. You pick or swap whenever you land on a Pink tile.</li>
+      <li><strong>Tile Events</strong> — Every color does something real: Blue's a stat bonus plus an extra turn, Brown/Red knock you backward, and Purple throws an actual CS riddle at you from <code>riddles.txt</code> for a shot at ±Wisdom.</li>
+      <li><strong>Leadership → Pride Points</strong> — At the finish line, your Strength/Stamina/Wisdom convert into a final Pride Points score. Higher total wins, and it gets logged to <code>overallGameResults.txt</code>.</li>
+    </ul>
+  </section>
+
+  <section class="section section-dark project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">Seeing It Run</p>
+      <h2>A real playthrough</h2>
+    </div>
+    <div class="prose">
+      <p>Built exactly per the project's own <code>readme.txt</code> (<code>g++ -std=c++17 gamedriver2.cpp Player.cpp Tile.cpp Board.cpp</code>). Character select, path choice, and tile events all pulling from the real data files:</p>
+    </div>
+    <pre class="terminal-block">~~~~ Welcome to the Circle of Life Game, Lion King Edition ~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~ About the Game ~~~~~~~~~~~~~~~~~~~~~~~
+ 1) You will be prompted to enter your name and choose your character
+    Choose wisely, as each character starts with different amount of Leadership Points
+ 2) You will choose a path type: Pride Lands or Cub Training
+ 3) Move through the game by navigating through the main menu
+
+Your Leadership Points will be converted to Pride Points at the end, player with most Pride Points wins!
+Good luck!
+
+Simba: Choose your character by entering the number at the end of your desired characters line.
+
+playerName|age|strength|stamina|wisdom|pridePoints
+Apollo|5|500|500|1000|20000
+Mane|8|900|600|600|20000
+Elsa|12|900|700|500|20000
+Zuri|7|600|500|900|20000
+Roary|18|1000|500|500|20000
+
+Nia: Choose your character by entering the number at the end of your desired characters line.
+
+playerName|age|strength|stamina|wisdom|pridePoints
+Mane|8|900|600|600|20000
+Elsa|12|900|700|500|20000
+Zuri|7|600|500|900|20000
+Roary|18|1000|500|500|20000
+
+You rolled a 6
+Simba moves to position: 6
+Desert storm sweeps through the territory
+You do not have an advisor to try and protect you from this event.
+Your Pride Points went from 25000 to 24500.
+
+You rolled a 4
+Nia moves to position: 4
+Oh no! You've stumbled into the Graveyard. You are forced to move back 10 tiles, and lose 100 Stamina, Strength, and Wisdom.
+Your new position is: 0
+
+You rolled a 6
+Simba moves to position: 20
+You have been captured by Hyenas! They drag you back to your previous position, and you lose 300 Stamina.
+Your new position is: 14
+
+You rolled a 2
+Nia moves to position: 16
+Guided by a friendly herd of elephants through rough terrain
+Yay! Your Pride Points went from 24300 to 25000!</pre>
+    <figure class="storyboard-frame">
+      <img src="img/boardgame/board-render.png" alt="Two real terminal renders of Simba's board: the starting layout with a grey start tile and a mix of green, blue, pink, brown, red, and purple tiles, and the same board after three moves with the player marker now on a green tile at position 15.">
+      <figcaption>The actual <code>Board</code> class, rendering in real 24-bit terminal color — before and after three moves.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">Reflection</p>
+      <h2>Challenges &amp; what I learned</h2>
+    </div>
+    <ul class="role-list">
+      <li><strong>Parsing Pipe-Delimited Data</strong> — characters, advisors, riddles, and random events all live in flat text files, parsed at runtime with a hand-written <code>split()</code> instead of a library.</li>
+      <li><strong>Branching Game State</strong> — the two path choices (Cub Training vs. Pride Lands) mutate a player's stats differently and swap in a different pre-generated board template, so the two playthroughs feel genuinely distinct.</li>
+      <li><strong>Tile Dispatch by Color</strong> — each of the six tile colors routes to its own event function (oasis, counsel, hyena, graveyard, riddle, random), keeping the event logic out of the main game loop.</li>
+      <li><strong>Leadership → Pride Points</strong> — designing a conversion formula that meaningfully rewards a full run's accumulated Strength/Stamina/Wisdom, rather than just tallying raw points.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Alexandra Palermo © 2026</p>
+</footer>
+
+<script src="script.js?v=37"></script>
+</body>
+</html>

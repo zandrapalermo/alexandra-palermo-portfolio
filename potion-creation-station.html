@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Potion Creation Station — Alexandra Palermo</title>
+<meta name="description" content="The Potion Creation Station — a console-based Red-Black Tree inventory system for an RPG-style potion shop, built by Alexandra Palermo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Jost:wght@400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=37">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav id="nav">
+  <a href="index.html#top" class="nav-mark">AP</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="project-hero">
+  <div class="project-hero-content">
+    <a href="index.html#work" class="back-link">← Back to work</a>
+    <p class="eyebrow">Solo Project</p>
+    <h1>The Potion Creation Station</h1>
+    <p class="project-hero-desc">A console-based inventory system for an RPG-style potion shop, built around a self-balancing Red-Black Tree so insertions, deletions, and sorted listings stay fast as the shop's stock grows. Potions carry Strength, Speed, and Health stats, with flexible sorting, search, and a guided walkthrough interface.</p>
+    <div class="project-hero-links">
+      <a href="https://github.com/zandrapalermo/RBT-Potion-Creation-Station" target="_blank" rel="noopener" class="btn btn-primary">Repo ↗</a>
+    </div>
+    <div class="project-keys">
+      <span class="tag">SOLO PROJECT</span>
+      <span class="tag">C++</span>
+      <span class="tag">DATA STRUCTURES</span>
+      <span class="tag">RED-BLACK TREE</span>
+      <span class="tag">OBJECT ORIENTED</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">The Problem</p>
+      <h2>Why a Red-Black Tree</h2>
+    </div>
+    <div class="prose">
+      <p>In many RPGs, players collect potions that boost stats — managing that inventory efficiently (sorting it, finding the strongest item) is a real-world case for the right data structure. A plain list means re-sorting on every change; an unbalanced BST can degrade to O(n) on the wrong input. A Red-Black Tree avoids both.</p>
+    </div>
+    <ul class="role-list">
+      <li><strong>O(log n) Guaranteed</strong> — Self-balancing via rotations and recoloring on every insert/delete, so performance never degrades as the inventory grows.</li>
+      <li><strong>Always Sorted</strong> — An in-order traversal returns potions already sorted by whichever stat is active — no separate sort step.</li>
+      <li><strong>Swappable Sort Key</strong> — Sort key is a <code>std::function</code>, so switching between Total / Strength / Speed / Health rebuilds the ordering without duplicating logic.</li>
+    </ul>
+  </section>
+
+  <section class="section section-dark project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">How It Works</p>
+      <h2>Under the hood</h2>
+    </div>
+    <ul class="role-list">
+      <li><strong>Potion</strong> — Struct holding name, strength, speed, health, plus a <code>totalStats()</code> helper.</li>
+      <li><strong>Node</strong> — Tree node storing a Potion, its red/black color, and parent/left/right pointers.</li>
+      <li><strong>RedBlackTree</strong> — <code>insert</code>, <code>remove</code>, <code>search</code>, <code>inorder</code>, and <code>clear</code>, with move semantics (copying is disabled on purpose — only one tree should own a given set of nodes).</li>
+      <li><strong>Input Validation</strong> — Menu choices are numeric-only, potion names can't be empty, and stats are capped 0–100,000, all enforced before anything touches the tree.</li>
+      <li><strong>6-Option Menu</strong> — Add, Display, Search, Delete, Clear, Change Sort, Quit — each with its own success/failure message.</li>
+    </ul>
+  </section>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">Screenshots</p>
+      <h2>A look inside</h2>
+    </div>
+    <div class="prose">
+      <p>A console app doesn't screenshot well, so here's an actual run, straight from the README:</p>
+    </div>
+    <pre class="terminal-block">Welcome to The Potion Creation Station!
+Please select your choice!: 1
+
+Potion name: Elixir of Vitality
+Strength: 4
+Speed: 3
+Health: 5
+Potion added!
+
+--- Menu ---
+1. Add Potion  2. Display All Potions  3. Search Potion by Name
+4. Delete Potion by Name  5. Clear All Potions  6. Change Sorting Method  7. Quit
+Please select your choice!: 2
+
+=== Potion List ===
+Potion of Giants - STR: 7, SPD: 5, HP: 6 (Total: 18)
+Elixir of Vitality - STR: 4, SPD: 3, HP: 5 (Total: 12)
+
+Please select your choice!: 4
+Enter potion name: Elixir of Vitality
+This Potion has been sent into the depths of the archive, never to be found again!</pre>
+  </section>
+
+  <section class="section section-dark project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">Reflection</p>
+      <h2>Challenges &amp; what I learned</h2>
+    </div>
+    <ul class="role-list">
+      <li><strong>Rotation &amp; Recoloring</strong> — Getting insertion fix-ups right is the classic hard part of a Red-Black Tree from scratch; one missed case breaks the balance guarantee.</li>
+      <li><strong>Defensive Input Handling</strong> — Every menu path had to survive non-numeric input, empty names, and out-of-range stats without crashing.</li>
+      <li><strong>Move Semantics in C++</strong> — Explicit move constructor/assignment, with the copy constructor deleted outright, to keep tree ownership unambiguous.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer site-footer-dark">
+  <p>Alexandra Palermo © 2026</p>
+</footer>
+
+<script src="script.js?v=37"></script>
+</body>
+</html>

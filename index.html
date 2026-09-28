@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandra Palermo — Portfolio</title>
+<meta name="description" content="Alexandra Palermo — Computer Science &amp; Design student. Software engineering and UI/UX projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Jost:wght@400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=37">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav id="nav">
+  <a href="#top" class="nav-mark">AP</a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-content">
+    <div class="hero-intro">
+      <h1><span class="hero-greeting">Hi, I'm</span> Alexandra<br>Palermo</h1>
+      <p class="hero-pitch">A Computer Science student who designs the interfaces she builds.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo-placeholder" aria-hidden="true"><span>[ your photo here ]</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span></span>
+    <p>scroll</p>
+  </div>
+</header>
+
+<main>
+
+  <section id="work" class="section">
+    <div class="section-head">
+      <p class="eyebrow">01 — Selected Work</p>
+      <h2>Things I've built</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card featured" data-href="repquest.html">
+        <div class="project-screen">
+          <span class="crt-knob" aria-hidden="true"></span>
+          <h3><a href="repquest.html">RepQuest</a></h3>
+          <p class="project-desc">A fitness app built to make a beginner's first weeks in the gym feel approachable instead of overwhelming — structured routines, a weekly workout calendar, and unlockable milestones that turn consistency into something worth celebrating.</p>
+          <p class="project-role"><span>My role —</span> Frontend-focused: templated the HTML/CSS views in Handlebars and shaped the day-to-day UI, while contributing across the stack on testing, Docker, and the Postgres schema alongside a five-person team.</p>
+          <div class="project-links">
+            <a href="https://group-project-buffbuffs-repquest.onrender.com" target="_blank" rel="noopener">Live app ↗</a>
+            <a href="https://github.com/CU-CSCI3308-Fall2025/group-project-BuffBuffs-RepQuest" target="_blank" rel="noopener">Repo ↗</a>
+          </div>
+        </div>
+        <div class="project-keys">
+          <span class="tag">TEAM PROJECT · 5</span>
+          <span class="tag">AGILE / SCRUM</span>
+          <span class="tag">UI/UX DESIGN</span>
+          <span class="tag">WIREFRAMING</span>
+          <span class="tag">HTML / CSS / JS</span>
+          <span class="tag">HANDLEBARS</span>
+          <span class="tag">POSTGRESQL</span>
+          <span class="tag">DOCKER</span>
+          <span class="tag">MOCHA / CHAI</span>
+        </div>
+      </article>
+
+      <article class="project-card" data-href="potion-creation-station.html">
+        <div class="project-screen">
+          <span class="crt-knob" aria-hidden="true"></span>
+          <h3><a href="potion-creation-station.html">The Potion Creation Station</a></h3>
+          <p class="project-desc">A console-based inventory system for an RPG-style potion shop, built around a self-balancing Red-Black Tree so insertions, deletions, and sorted listings stay fast as the shop's stock grows. Potions carry Strength, Speed, and Health stats, with flexible sorting, search, and a guided walkthrough interface.</p>
+          <div class="project-links">
+            <a href="https://github.com/zandrapalermo/RBT-Potion-Creation-Station" target="_blank" rel="noopener">Repo ↗</a>
+          </div>
+        </div>
+        <div class="project-keys">
+          <span class="tag">SOLO PROJECT</span>
+          <span class="tag">C++</span>
+          <span class="tag">DATA STRUCTURES</span>
+          <span class="tag">RED-BLACK TREE</span>
+          <span class="tag">OBJECT ORIENTED</span>
+        </div>
+      </article>
+
+      <article class="project-card" data-href="pride-rock.html">
+        <div class="project-screen">
+          <span class="crt-knob" aria-hidden="true"></span>
+          <h3><a href="pride-rock.html">The Circle of Life Game</a></h3>
+          <p class="project-desc">A two-player, Lion King–themed board game for my data structures course — character select, branching paths, colored tile events, and a full-color terminal board.</p>
+          <div class="project-links">
+            <span class="link-disabled">Repo — not yet public</span>
+          </div>
+        </div>
+        <div class="project-keys">
+          <span class="tag">SOLO PROJECT</span>
+          <span class="tag">C++</span>
+          <span class="tag">DATA STRUCTURES</span>
+          <span class="tag">FILE I/O</span>
+          <span class="tag">OBJECT ORIENTED</span>
+        </div>
+      </article>
+
+      <article class="project-card featured" data-href="safesmart.html">
+        <div class="project-screen">
+          <span class="crt-knob" aria-hidden="true"></span>
+          <h3><a href="safesmart.html">SafeSmart</a></h3>
+          <p class="project-desc">Most internet-safety tools bet on teaching elderly people to spot scams themselves. SafeSmart bets against that — it watches for suspicious activity and alerts a trusted relative directly, an approach validated through a 61-person survey and two rounds of usability testing.</p>
+          <p class="project-role"><span>My role —</span> Design and prototyping lead: built the Figma prototype and drove the interaction/visual design decisions, while my partner led the written research documentation and reporting.</p>
+          <div class="project-links">
+            <a href="https://www.figma.com/proto/GkllS864Kj6CJSe00pxnF3/Milestone-3--Copy-?node-id=2010-2161&t=O5nxgVzez357CGhD-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2010%3A2161" target="_blank" rel="noopener">Figma prototype ↗</a>
+          </div>
+        </div>
+        <div class="project-keys">
+          <span class="tag">TEAM PROJECT · 2</span>
+          <span class="tag">UX RESEARCH</span>
+          <span class="tag">SURVEY DESIGN</span>
+          <span class="tag">STORYBOARDING</span>
+          <span class="tag">FIGMA</span>
+          <span class="tag">PROTOTYPING</span>
+          <span class="tag">UI/UX DESIGN</span>
+          <span class="tag">USABILITY TESTING</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills" class="section section-dark">
+    <div class="section-head">
+      <p class="eyebrow">02 — Toolkit</p>
+      <h2>What I work with</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <ul>
+          <li>Java</li>
+          <li>Python</li>
+          <li>C / C++</li>
+          <li>SQL (Postgres)</li>
+          <li>JavaScript</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Frameworks</h4>
+        <ul>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Mocha</li>
+          <li>Chai</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Dev Tools</h4>
+        <ul>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Design</h4>
+        <ul>
+          <li>Figma</li>
+          <li>Adobe Suite</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-head">
+      <p class="eyebrow">03 — About</p>
+      <h2>A little about me</h2>
+    </div>
+    <div class="prose">
+      <p>I'm a Computer Science student who's just as interested in how something looks and feels as how it works under the hood. My coursework has taken me from data structures and algorithms to full-stack web development, and I round it out with design coursework — wireframing, prototyping, and thinking through how a real person will actually use what I build.</p>
+      <p class="placeholder-text">[Add a paragraph here about your school, expected graduation, and what kind of internship you're looking for.]</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-dark contact-section">
+    <div class="section-head">
+      <p class="eyebrow">04 — Contact</p>
+      <h2>Let's talk</h2>
+    </div>
+    <p class="contact-lede">I'm currently looking for internships in software engineering and UI/UX. Reach out — I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:alexandrappalermo@gmail.com" class="contact-link">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">alexandrappalermo@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/alexandra-palermo-8b1145385/" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">alexandra-palermo</span>
+      </a>
+      <a href="https://github.com/zandrapalermo" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">zandrapalermo</span>
+      </a>
+      <span class="contact-link contact-link-static">
+        <span class="contact-label">Phone</span>
+        <span class="contact-value">(970)-631-5048</span>
+      </span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer site-footer-dark">
+  <p>Alexandra Palermo © 2026</p>
+</footer>
+
+<script src="script.js?v=37"></script>
+</body>
+</html>

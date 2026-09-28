@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RepQuest — Alexandra Palermo</title>
+<meta name="description" content="RepQuest — a fitness app built by Alexandra Palermo and a five-person team to make a beginner's first weeks in the gym feel approachable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Jost:wght@400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=37">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav id="nav">
+  <a href="index.html#top" class="nav-mark">AP</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="project-hero">
+  <div class="project-hero-content">
+    <a href="index.html#work" class="back-link">← Back to work</a>
+    <p class="eyebrow">Team Project · 5</p>
+    <h1>RepQuest</h1>
+    <p class="project-hero-desc">A gamified workout tracker — structured routines, streaks, and unlockable achievements that turn consistency into a game.</p>
+    <div class="project-hero-links">
+      <a href="https://group-project-buffbuffs-repquest.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">Live app ↗</a>
+      <a href="https://github.com/CU-CSCI3308-Fall2025/group-project-BuffBuffs-RepQuest" target="_blank" rel="noopener" class="btn btn-ghost">Repo ↗</a>
+    </div>
+    <div class="project-keys">
+      <span class="tag">TEAM PROJECT · 5</span>
+      <span class="tag">AGILE / SCRUM</span>
+      <span class="tag">UI/UX DESIGN</span>
+      <span class="tag">WIREFRAMING</span>
+      <span class="tag">HTML / CSS / JS</span>
+      <span class="tag">HANDLEBARS</span>
+      <span class="tag">POSTGRESQL</span>
+      <span class="tag">DOCKER</span>
+      <span class="tag">MOCHA / CHAI</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">My Role</p>
+      <h2>What I worked on</h2>
+    </div>
+    <ul class="role-list">
+      <li><strong>Wireframing &amp; UX Design</strong> — Sketched wireframes for all 6 core screens; designed the gamified home-page pathway, iconography, and locked/unlocked state system.</li>
+      <li><strong>Frontend Development</strong> — Templated views in Handlebars; built the Profile page end-to-end, including image upload.</li>
+      <li><strong>Testing &amp; QA</strong> — Paired on Mocha/Chai unit tests for login; wrote UAT cases for error-state handling.</li>
+      <li><strong>Agile / Scrum</strong> — Tracked work as user stories with story points; ran weekly sprint check-ins with the team and TA.</li>
+      <li><strong>Visual Polish</strong> — Led a final UI consistency pass across every page.</li>
+    </ul>
+  </section>
+
+  <section class="section section-dark project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">The Problem</p>
+      <h2>Why this app</h2>
+    </div>
+    <div class="prose">
+      <p>Most fitness apps are built for people who already work out. RepQuest is built for people who don't yet, but want to — our target user is a college student in their late teens or early twenties who's never managed to stick with a gym routine before: motivated in theory, easily discouraged in practice by apps that feel like spreadsheets or gyms that feel unapproachable. Our team's vision statement put it plainly: turn fitness tracking into something closer to a game than a chore, so showing up starts to feel like progress instead of an obligation.</p>
+    </div>
+    <ul class="role-list">
+      <li><strong>Gamified Progression</strong> — A winding path of levels to climb, not a flat history list.</li>
+      <li><strong>Daily Streaks</strong> — Visible momentum that rewards showing up, not just logging data.</li>
+      <li><strong>Unlockable Achievements</strong> — Badges tied to real milestones: total workouts, muscle group, streak length.</li>
+      <li><strong>Low-Friction Onboarding</strong> — Clean UI, simple navigation, and legible type so first-timers aren't intimidated before they even start.</li>
+    </ul>
+  </section>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">From Wireframe to Build</p>
+      <h2>Wireframe vs. final</h2>
+    </div>
+
+    <div class="compare-block">
+      <p class="compare-heading">Home — the workout pathway</p>
+      <div class="compare-pair">
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-home.jpg" alt="Hand-drawn wireframe of the RepQuest home page, showing a winding path of five workout levels between the header and the bottom nav."></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-home.png" alt="Screenshot of the live RepQuest home page, showing the same winding workout path with real level icons on a gradient background."></figure>
+      </div>
+      <p class="compare-caption">Shipped almost exactly as sketched. Hamburger menu → home icon; streak page → header counter.</p>
+    </div>
+
+    <div class="compare-block">
+      <p class="compare-heading">Calendar</p>
+      <div class="compare-pair">
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-calendar.jpg" alt="Hand-drawn wireframe of the RepQuest calendar page, a seven-day week grid with a details line under each day."></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-calendar.png" alt="Screenshot of the live RepQuest calendar page, showing a seven-day week with each day's assigned workout type."></figure>
+      </div>
+      <p class="compare-caption">Same 7-day layout, now driven by real dates and push/pull/legs/rest data.</p>
+    </div>
+
+    <div class="compare-block">
+      <p class="compare-heading">Workouts</p>
+      <div class="compare-pair">
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-workouts.jpg" alt="Hand-drawn wireframe of the RepQuest workouts page, listing Workout 1 and Workout 2 as empty boxes."></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-workouts.png" alt="Screenshot of the live RepQuest workouts page, showing Push Day and Pull Day exercise tables with sets and reps."></figure>
+      </div>
+      <p class="compare-caption">Empty placeholder blocks became real exercise tables with sets and reps.</p>
+    </div>
+
+    <div class="compare-block">
+      <p class="compare-heading">Achievements</p>
+      <div class="compare-pair">
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-achievements.jpg" alt="Hand-drawn wireframe of the RepQuest achievements page, a 3-by-2 grid of empty badge placeholders."></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-achievements.png" alt="Screenshot of the live RepQuest achievements page for a guest account, reading 'No achievements to show yet.'"></figure>
+      </div>
+      <p class="compare-caption">Fully personalized, trigger-driven badge system — this guest account just hasn't unlocked any yet.</p>
+    </div>
+
+    <div class="compare-block">
+      <p class="compare-heading">Streak &amp; Profile</p>
+      <div class="compare-pair">
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-streak.jpg" alt="Hand-drawn wireframe of a dedicated RepQuest streak page, with a flame icon and day count."></figure>
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-profile.jpg" alt="Hand-drawn wireframe of the RepQuest profile page, with a side menu and a large information panel."></figure>
+      </div>
+      <p class="compare-caption">Streak folded into the header counter. Profile (built by me, incl. picture upload) needs a real login to view.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">UI/UX Design</p>
+      <h2>Designing the visual language</h2>
+    </div>
+    <div class="prose">
+      <p>Most of my day-to-day work here was visual design — deciding what a piece of state should look like before anyone touched a database.</p>
+    </div>
+    <ul class="role-list">
+      <li><strong>Color-Coded States</strong> — Gray = locked, green = unlocked. No text required.</li>
+      <li><strong>Custom Iconography</strong> — One icon per workout type (push/pull/legs/rest), reused consistently across the path, workouts, and achievements.</li>
+      <li><strong>Gamification Pattern</strong> — A Duolingo-style winding path instead of a flat history list.</li>
+      <li><strong>Design System</strong> — One consistent visual language, not each screen inventing its own.</li>
+    </ul>
+
+    <div class="icon-showcase">
+      <p class="icon-showcase-label">Path Icons — Locked vs. Unlocked</p>
+      <div class="icon-grid">
+        <div class="icon-card"><img src="img/repquest/icons/node-push-locked.png" alt="Locked path icon for a push workout, shown in gray."><span>Push — Locked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-push-unlocked.png" alt="Unlocked path icon for a push workout, shown in green."><span>Push — Unlocked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-pull-locked.png" alt="Locked path icon for a pull workout, shown in gray."><span>Pull — Locked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-pull-unlocked.png" alt="Unlocked path icon for a pull workout, shown in green."><span>Pull — Unlocked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-legs-locked.png" alt="Locked path icon for a legs workout, shown in gray."><span>Legs — Locked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-legs-unlocked.png" alt="Unlocked path icon for a legs workout, shown in green."><span>Legs — Unlocked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-rest-locked.png" alt="Locked path icon for a rest day, shown in gray."><span>Rest — Locked</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/node-rest-unlocked.png" alt="Unlocked path icon for a rest day, shown in green."><span>Rest — Unlocked</span></div>
+      </div>
+    </div>
+
+    <div class="icon-showcase">
+      <p class="icon-showcase-label">Achievement Trophies</p>
+      <div class="icon-grid">
+        <div class="icon-card"><img src="img/repquest/icons/trophy-general.png" alt="General fitness milestone trophy, a gold cup with flexing arms."><span>General</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/trophy-push.png" alt="Push workout milestone trophy."><span>Push</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/trophy-pull.png" alt="Pull workout milestone trophy."><span>Pull</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/trophy-legs.png" alt="Legs workout milestone trophy."><span>Legs</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/trophy-rest.png" alt="Rest day milestone trophy."><span>Rest</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/trophy-streak.png" alt="Streak milestone trophy."><span>Streak</span></div>
+      </div>
+    </div>
+
+    <div class="icon-showcase">
+      <p class="icon-showcase-label">Brand Marks</p>
+      <div class="icon-grid">
+        <div class="icon-card"><img src="img/repquest/icons/logo.png" alt="RepQuest logo."><span>Logo</span></div>
+        <div class="icon-card"><img src="img/repquest/icons/streak-icon.png" alt="Flame icon used for the streak counter."><span>Streak Flame</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-detail-section">
+    <div class="section-head">
+      <p class="eyebrow">Reflection</p>
+      <h2>Challenges &amp; what I learned</h2>
+    </div>
+    <div class="prose">
+      <p>Extra-credit risk analysis, and what actually mattered once we were building:</p>
+    </div>
+    <ul class="role-list">
+      <li><strong>Responsive Design</strong> — Mobile-first mindset for a mobile-heavy audience.</li>
+      <li><strong>Scope Management</strong> — Sized sprints against real availability, not wishful thinking.</li>
+      <li><strong>Security Awareness</strong> — Flagged auth/DB risk early. (The real failure, months later: a free-tier expiration, not a breach.)</li>
+      <li><strong>QA</strong> — Wrote UAT cases for error-state handling across onboarding, calendar, and home.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Alexandra Palermo © 2026</p>
+</footer>
+
+<script src="script.js?v=37"></script>
+</body>
+</html>
