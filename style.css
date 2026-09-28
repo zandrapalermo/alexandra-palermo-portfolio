@@ -246,13 +246,26 @@ img { max-width: 100%; display: block; }
 }
 
 .hero h1 {
+  position: relative;
   font-family: var(--font-display);
   font-weight: var(--font-display-weight, 600);
   font-size: clamp(3.2rem, 9vw, 6.4rem);
   line-height: 0.98;
   letter-spacing: -0.01em;
   margin-bottom: 52px;
+  padding-left: 28px;
   font-optical-sizing: auto;
+}
+
+/* accent line spanning the full height of the greeting + name block */
+.hero h1::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
 }
 
 .hero-pitch {
