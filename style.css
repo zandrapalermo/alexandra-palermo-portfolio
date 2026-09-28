@@ -256,6 +256,17 @@ img { max-width: 100%; display: block; }
   font-optical-sizing: auto;
 }
 
+/* accent rule starting mid-"Hi, I'm", stretching right to the end of "Palermo" */
+.hero h1::after {
+  content: '';
+  position: absolute;
+  left: 0.95em;
+  top: 0.62em;
+  width: 3.2em;
+  height: 2px;
+  background: var(--accent);
+}
+
 .hero-pitch {
   font-size: clamp(0.53rem, 1.5vw, 1.07rem);
   line-height: 1.4;
