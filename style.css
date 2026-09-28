@@ -18,16 +18,16 @@
 }
 
 :root {
-  --ink: #24433C;
-  --ink-soft: #2D5049;
+  --ink: #182C27;
+  --ink-soft: #213934;
   --paper: #E6EAE3;
   --paper-warm: #D7DFD6;
   --text-dark: #17281F;
   --text-light: #EEF2EA;
   --muted-dark: #55665C;
   --muted-light: #A9BEB4;
-  --accent: #6FA46B;
-  --accent-soft: #8BBB85;
+  --accent: #7FC077;
+  --accent-soft: #9BD791;
   --structure: #718F8B;
   --line-dark: rgba(238, 242, 234, 0.16);
   --line-light: rgba(23, 40, 31, 0.13);
