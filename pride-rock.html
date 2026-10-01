@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Jost:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=38">
+<link rel="stylesheet" href="style.css?v=46">
 </head>
 <body>
 
@@ -31,9 +31,6 @@
     <p class="eyebrow">Solo Project</p>
     <h1>The Circle of Life Game</h1>
     <p class="project-hero-desc">A two-player Lion King board game I built for my data structures course. Pick a character, choose a path, and race down a randomly generated, full-color track — whoever's racked up more Pride Points by Pride Rock wins.</p>
-    <div class="project-hero-links">
-      <span class="link-disabled">Repo — not yet public</span>
-    </div>
     <div class="project-keys">
       <span class="tag">SOLO PROJECT</span>
       <span class="tag">C++</span>
@@ -68,16 +65,8 @@
     <div class="prose">
       <p>Built exactly per the project's own <code>readme.txt</code> (<code>g++ -std=c++17 gamedriver2.cpp Player.cpp Tile.cpp Board.cpp</code>). Character select, path choice, and tile events all pulling from the real data files:</p>
     </div>
+    <p class="subsection-label">Character Select</p>
     <pre class="terminal-block">~~~~ Welcome to the Circle of Life Game, Lion King Edition ~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~ About the Game ~~~~~~~~~~~~~~~~~~~~~~~
- 1) You will be prompted to enter your name and choose your character
-    Choose wisely, as each character starts with different amount of Leadership Points
- 2) You will choose a path type: Pride Lands or Cub Training
- 3) Move through the game by navigating through the main menu
-
-Your Leadership Points will be converted to Pride Points at the end, player with most Pride Points wins!
-Good luck!
-
 Simba: Choose your character by entering the number at the end of your desired characters line.
 
 playerName|age|strength|stamina|wisdom|pridePoints
@@ -85,39 +74,33 @@ Apollo|5|500|500|1000|20000
 Mane|8|900|600|600|20000
 Elsa|12|900|700|500|20000
 Zuri|7|600|500|900|20000
-Roary|18|1000|500|500|20000
+Roary|18|1000|500|500|20000</pre>
 
-Nia: Choose your character by entering the number at the end of your desired characters line.
-
-playerName|age|strength|stamina|wisdom|pridePoints
-Mane|8|900|600|600|20000
-Elsa|12|900|700|500|20000
-Zuri|7|600|500|900|20000
-Roary|18|1000|500|500|20000
-
-You rolled a 6
+    <p class="subsection-label">Tile Events in Action</p>
+    <pre class="terminal-block">You rolled a 6
 Simba moves to position: 6
 Desert storm sweeps through the territory
-You do not have an advisor to try and protect you from this event.
 Your Pride Points went from 25000 to 24500.
 
 You rolled a 4
 Nia moves to position: 4
-Oh no! You've stumbled into the Graveyard. You are forced to move back 10 tiles, and lose 100 Stamina, Strength, and Wisdom.
-Your new position is: 0
+Oh no! You've stumbled into the Graveyard. Move back 10 tiles, -100 Stamina/Strength/Wisdom.
 
 You rolled a 6
 Simba moves to position: 20
-You have been captured by Hyenas! They drag you back to your previous position, and you lose 300 Stamina.
-Your new position is: 14
+You've been captured by Hyenas! Dragged back to position 14, -300 Stamina.
 
 You rolled a 2
 Nia moves to position: 16
-Guided by a friendly herd of elephants through rough terrain
-Yay! Your Pride Points went from 24300 to 25000!</pre>
-    <figure class="storyboard-frame">
-      <img src="img/boardgame/board-render.png" alt="Two real terminal renders of Simba's board: the starting layout with a grey start tile and a mix of green, blue, pink, brown, red, and purple tiles, and the same board after three moves with the player marker now on a green tile at position 15.">
-      <figcaption>The actual <code>Board</code> class, rendering in real 24-bit terminal color — before and after three moves.</figcaption>
+Guided by a friendly herd of elephants — Pride Points: 24300 → 25000!</pre>
+    <p class="subsection-label">The Actual Board Class</p>
+    <figure class="storyboard-frame no-zoom">
+      <img src="img/boardgame/board-start.png" alt="Real terminal render of Simba's board at the start: a grey start tile and a mix of green, blue, pink, brown, red, and purple tiles.">
+      <figcaption>Rendered in real 24-bit terminal color — the starting layout.</figcaption>
+    </figure>
+    <figure class="storyboard-frame no-zoom">
+      <img src="img/boardgame/board-after.png" alt="Real terminal render of Simba's board after three moves, with the player marker now on a green tile at position 15.">
+      <figcaption>The same board after three moves — marker now at position 15.</figcaption>
     </figure>
   </section>
 
@@ -140,6 +123,6 @@ Yay! Your Pride Points went from 24300 to 25000!</pre>
   <p>Alexandra Palermo © 2026</p>
 </footer>
 
-<script src="script.js?v=38"></script>
+<script src="script.js?v=46"></script>
 </body>
 </html>

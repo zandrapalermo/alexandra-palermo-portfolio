@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Jost:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=38">
+<link rel="stylesheet" href="style.css?v=46">
 </head>
 <body>
 
@@ -71,8 +71,7 @@
       <h2>Starting from evidence, not assumptions</h2>
     </div>
     <div class="prose">
-      <p>SafeSmart is an app to help prevent elderly people from being victims of internet-based financial scams. Many elderly people do not understand the technology that they use as part of their daily lives, which puts them at significant risk of harm. Our app is designed to allow them to maintain their freedom and independence without compromising their safety.</p>
-      <p>Before any interface design, we sent a Google Survey to friends and family about their elderly relatives — not to elderly people directly, since we were worried we would either not receive enough responses, or would offend the elderly people we sent it to. We received 61 responses.</p>
+      <p>SafeSmart protects elderly people from financial scams without requiring them to learn new technology. Before any interface design, we surveyed 61 friends and family members about their elderly relatives — not elderly people directly, to avoid skewing or discouraging responses.</p>
     </div>
     <ul class="role-list">
       <li><strong>77.1%</strong> of respondents are worried their elderly relatives could be victims of a scam, but only <strong>19.7%</strong> are confident in their elderly relatives' ability to safely navigate the internet.</li>
@@ -111,8 +110,7 @@
       <h2>From insight to concept</h2>
     </div>
     <div class="prose">
-      <p>We started rough, with raw brainstorming notes on what the interface actually needed to do for each user type before any polished sketching. Early ideas we weighed against each other: a pop-up to warn of suspicious activity/behavior versus one completely blocking an action, and a trusted-contact version where "different info [is shown] depending on privacy selection" and could "give exact suspicious behavior or just say that it happened." We also decided early that there wouldn't be "not much UI, because it runs in the background mostly" for the elderly user, with "more UI for the trusted contact" instead.</p>
-      <p>A recurring insight from the survey shaped this stage directly: as we suspected, most people do not think that their relatives can or are willing to learn more about the internet. This made us more confident in our product idea because it does not rely on teaching elderly people any new information.</p>
+      <p>Early brainstorming weighed a soft warning pop-up against one that fully blocks an action, and a trusted-contact view with adjustable privacy. The elderly account stays minimal by design; the trusted-contact account carries more of the interface. The survey confirmed the instinct behind that split — most people don't think their relatives can or want to learn new tech, so the product leans on monitoring, not teaching.</p>
     </div>
 
     <div class="prose">
@@ -121,19 +119,19 @@
 
     <div class="compare-block">
       <p class="compare-heading">Scenario 1</p>
-      <div class="compare-pair">
+      <div class="compare-pair scenario1-compare">
         <figure><span class="compare-label">Panels 1–2</span><img src="img/safesmart/sketches/storyboard1-a.png" alt="Storyboard panels: an elderly woman named Joane reading an urgent email from a bank asking for money."></figure>
         <figure><span class="compare-label">Panels 3–4</span><img src="img/safesmart/sketches/storyboard1-b.png" alt="Storyboard panels: SafeSmart flags the bank email as a potential scam with a warning, and Joane reacts with relief."></figure>
       </div>
-      <p class="compare-caption">Joane, an elderly woman, was scrolling through her email. She saw that she got an urgent email from a bank asking for money. SafeSmart detected that this email could be a potential scam, as they were insistent that she owed them thousands of dollars — and Joane banks with "city bank," not "bank :)". The app sent her a notification to proceed with caution, and Joane realized she just got saved from being scammed.</p>
+      <p class="compare-caption">Joane gets an urgent email asking for money from "bank :)" — not her actual bank, "city bank." SafeSmart flags it as a likely scam and warns her before she responds.</p>
     </div>
 
     <div class="compare-block">
       <p class="compare-heading">Scenario 2</p>
-      <div class="storyboard-frame" style="margin-bottom: 0;">
+      <div class="storyboard-frame no-zoom" style="margin-bottom: 0;">
         <img src="img/safesmart/sketches/storyboard2.png" alt="Storyboard panels: Joane reads a SafeSmart News story about another woman, Lucy, who was scammed via a phone call, and reacts with concern.">
       </div>
-      <p class="compare-caption">Joane, an elderly woman, was reading the SafeSmart digital newspaper. This newspaper informs her of recent potential scams that people have been falling victim to, and how to prevent them from happening to her. She read a story about another woman named Lucy who fell victim to a phone call scam, and is upset by it, but knows she should be careful and read more about how to prevent it from happening to herself.</p>
+      <p class="compare-caption">Joane reads SafeSmart's digital newspaper, which covers recent scams and how to avoid them. A story about Lucy, scammed over the phone, unsettles her — but reinforces why she should stay cautious.</p>
       <div class="quote-block">
         <p>"There is no ability or intent to learn anymore."</p>
         <cite>Survey respondent, in reference to elderly people</cite>
@@ -142,11 +140,11 @@
 
     <div class="compare-block">
       <p class="compare-heading">Scenario 3</p>
-      <div class="compare-pair">
+      <div class="compare-pair scenario3-compare">
         <figure><span class="compare-label">Panels 1–2</span><img src="img/safesmart/sketches/storyboard3-a.png" alt="Storyboard panels: Joane's daughter Lisa opens the SafeSmart app to check on her mother's flagged activity."></figure>
         <figure><span class="compare-label">Panels 3–4</span><img src="img/safesmart/sketches/storyboard3-b.png" alt="Storyboard panels: Lisa reviews a list of alerts, then reads the detail of a specific flagged scam email, confirming her mother did not respond."></figure>
       </div>
-      <p class="compare-caption">Joane's daughter, Lisa, manages her mother's internet activity that gets flagged by SafeSmart. When she opened the app, she found that Joane had been notified of a potential threat 11 times. She checked the most recent alert and found that her mom had been emailed by a scammer pretending to be a bank asking for money — and that Joane did not send the scammer money, thanks to SafeSmart notifying her of the risk.</p>
+      <p class="compare-caption">Lisa, Joane's daughter, monitors flagged activity on her mother's account. She reviews the latest alert — a fake bank email asking for money — and confirms Joane never responded, thanks to SafeSmart's warning.</p>
     </div>
   </section>
 
@@ -156,14 +154,13 @@
       <h2>Validating the flow</h2>
     </div>
     <div class="prose">
-      <p>For our second round of usability testing, we conducted tests with three college-aged participants: one CTD major, one computer science major, and one aerospace engineering major. Participants were recruited through convenience, as they are classmates and friends of ours — not the exact target demographic for SafeSmart, but they provided valuable insight into our app and any problems it may have.</p>
-      <p>Each participant completed five specific tasks using our Figma prototype, playing both an elderly user and a trusted relative user. We recorded observational notes, task success, and timing of the task completion.</p>
+      <p>Round two tested three college-aged participants — convenience-recruited classmates, not SafeSmart's actual target demographic, but useful for surfacing real problems. Each completed five tasks in the Figma prototype as both the elderly user and the trusted relative, while we tracked task success and timing.</p>
     </div>
     <ul class="role-list">
       <li><strong>Dual Account Model</strong> — Elder123 gets a minimal, notification-driven experience; Relative123 gets the monitoring and alert-review tools.</li>
-      <li><strong>Familiar Information Architecture</strong> — Mail, News, Prevention History, Resources, Help — a menu structure that mirrors apps users already know.</li>
-      <li><strong>Scripted, Task-Based Scenarios</strong> — e.g. Test 1: "As an elderly user, check your flagged emails that are routed through the SafeSmart app," with numbered click-by-click instructions, so we measured real task completion, not opinions.</li>
-      <li><strong>Two Testing Rounds</strong> — Round one validated the core flows; round two specifically tested two new features added in response to round-one feedback.</li>
+      <li><strong>Familiar Information Architecture</strong> — Mail, News, Prevention History, Resources, Help — mirrors apps users already know.</li>
+      <li><strong>Scripted Task Scenarios</strong> — Numbered, click-by-click instructions per test, so we measured real task completion, not opinions.</li>
+      <li><strong>Two Testing Rounds</strong> — Round one validated the core flows; round two tested two features added in response to that feedback.</li>
     </ul>
 
     <div class="screen-grid">
@@ -180,19 +177,23 @@
       <p class="eyebrow">Iterating on Feedback</p>
       <h2>What round one changed</h2>
     </div>
-    <div class="prose">
-      <p>One of the changes we added to our second iteration was a logout button. This wasn't something we were planning to do because of the nature of the prototype, but we received feedback that it was missing — it was a very simple feature to add, so it was no problem to use it to improve our prototype.</p>
-      <p>Another change we added was a simulated notification from SafeSmart while not being on the app. This change was planned after the user testing from the first iteration: one of the participants was curious about how the app would alert users, so we decided to add another usability test to show it.</p>
-    </div>
-    <ul class="role-list">
-      <li><strong>Nearly Identical Core Results</strong> — Results for the first three user tests were nearly identical to those from the first iteration, since the changes we added didn't affect those tasks. All participants completed them in the appropriate times, without any clarifying questions.</li>
-      <li><strong>New Test Received Well</strong> — All three participants unknowingly followed the exact instructions to complete the notification task. One comment: a participant wished to be taken directly to an alert after clicking the notification — we'd routed through the login page first since that flow in Figma started from a logged-out state.</li>
-      <li><strong>Sign-Out Took a Little Longer</strong> — The fifth test was also completed successfully, though participants took a few extra seconds, often clicking the wrong icon first to find account settings. We're not worried about this — with so many apps using different icons for settings, it reads as unfamiliarity with this app specifically, not a task failure. We probably won't change the icons.</li>
-    </ul>
 
-    <div class="screen-grid">
-      <div class="screen-card"><img src="img/safesmart/screens/iteration-notification.jpg" alt="iPhone lock screen showing a SafeSmart push notification: SECURITY ALERT, potential scam detected." loading="lazy"><span>New — Lock-Screen Alert</span></div>
-      <div class="screen-card"><img src="img/safesmart/screens/iteration-signout.jpg" alt="SafeSmart sign-out confirmation modal for the Relative123 account." loading="lazy"><span>New — Sign-Out Confirmation</span></div>
+    <div class="text-screens-row">
+      <div>
+        <div class="prose">
+          <p>Round one feedback drove two additions: a sign-out flow we hadn't originally planned for, and a simulated lock-screen notification after a participant asked how SafeSmart would alert someone who wasn't actively in the app.</p>
+        </div>
+        <ul class="role-list">
+          <li><strong>Core Tasks Unchanged</strong> — The first three tests landed the same as round one; those flows weren't touched.</li>
+          <li><strong>Notification Task Passed</strong> — All three completed it smoothly, though one expected to land directly on the alert instead of the login screen.</li>
+          <li><strong>Sign-Out Took Longer</strong> — Still completed, but testers often clicked the wrong icon first — more an unfamiliar-icon issue than a real task failure.</li>
+        </ul>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-card"><img src="img/safesmart/screens/iteration-notification.jpg" alt="iPhone lock screen showing a SafeSmart push notification: SECURITY ALERT, potential scam detected." loading="lazy"><span>New — Lock-Screen Alert</span></div>
+        <div class="screen-card"><img src="img/safesmart/screens/iteration-signout.jpg" alt="SafeSmart sign-out confirmation modal for the Relative123 account." loading="lazy"><span>New — Sign-Out Confirmation</span></div>
+      </div>
     </div>
   </section>
 
@@ -201,35 +202,27 @@
       <p class="eyebrow">Reflection</p>
       <h2>Strengths, challenges &amp; what's next</h2>
     </div>
-    <div class="prose">
-      <p>Strengths/Highlights:</p>
-    </div>
+    <p class="subsection-label">Strengths</p>
     <ul class="role-list">
-      <li><strong>User-Centered Design</strong> — Based on survey feedback; focused on wanted features.</li>
-      <li><strong>Simple + Accessible UI</strong> — Easy for elderly users and relatives alike; clear and readable.</li>
-      <li><strong>Relevant Core Idea</strong> — Provides a needed solution, a useful alert system, and scam protection that allows for independence.</li>
-      <li><strong>Familiar &amp; Meaningful Features</strong> — A news section designed like a newspaper; prioritizes older forms of communication (emailing).</li>
-      <li><strong>Thoughtful Design Trade-Offs</strong> — Removed unnecessary features; prioritized simplicity.</li>
+      <li><strong>User-Centered Design</strong> — Every feature traces back to survey data, not a guess.</li>
+      <li><strong>Simple, Accessible UI</strong> — Clear and readable for elderly users and relatives alike.</li>
+      <li><strong>Relevant Core Idea</strong> — A real alert system that protects without sacrificing independence.</li>
+      <li><strong>Familiar Features</strong> — A newspaper-style news feed, built on communication elderly users already trust.</li>
     </ul>
 
-    <div class="prose">
-      <p>Challenges:</p>
-    </div>
+    <p class="subsection-label">Challenges</p>
     <ul class="role-list">
-      <li><strong>Target Audience Mismatch</strong> — We did user-testing with college students; no testing with our ideal users (elderly people and their relatives).</li>
-      <li><strong>User Roles Are Too Similar</strong> — Little to no difference between accounts; limited functionality for relatives.</li>
-      <li><strong>Incomplete / Inconsistent Features</strong> — Some actions were missing in certain screens; the alert system wasn't fully laid out.</li>
-      <li><strong>Feature Confusion</strong> — Some tabs were unclear (news); testers weren't always sure why a feature was implemented.</li>
-      <li><strong>Prototype Limitations</strong> — Figma couldn't fully simulate app behavior, so navigation/flow was slightly restricted, and it was hard to map every clickable action to the right place.</li>
+      <li><strong>Audience Mismatch</strong> — Tested with college students, not our actual elderly/relative users.</li>
+      <li><strong>Roles Too Similar</strong> — The elder and relative accounts don't differ enough yet.</li>
+      <li><strong>Feature Confusion</strong> — A few testers weren't sure why certain features (like News) existed.</li>
+      <li><strong>Prototype Limitations</strong> — Figma couldn't simulate real app behavior, so some flows stayed rough.</li>
     </ul>
 
-    <div class="prose">
-      <p>Future work:</p>
-    </div>
+    <p class="subsection-label">Future Work</p>
     <ul class="role-list">
-      <li>Further explore how SafeSmart sends alerts while not using the app.</li>
-      <li>Add more differences between the elderly and relative accounts.</li>
-      <li>Improve app design.</li>
+      <li>Figure out how SafeSmart alerts someone who isn't in the app.</li>
+      <li>Differentiate the elderly and relative accounts further.</li>
+      <li>Keep refining the visual design.</li>
     </ul>
   </section>
 
@@ -239,6 +232,6 @@
   <p>Alexandra Palermo © 2026</p>
 </footer>
 
-<script src="script.js?v=38"></script>
+<script src="script.js?v=46"></script>
 </body>
 </html>

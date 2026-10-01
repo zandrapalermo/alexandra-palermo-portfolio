@@ -384,6 +384,17 @@ img { max-width: 100%; display: block; }
   margin-bottom: 64px;
 }
 
+/* on project detail pages specifically: tighten the gap between the
+   title and the paragraph underneath it, then open up more room
+   between that paragraph and the bullet list that follows it */
+.project-detail-section .section-head {
+  margin-bottom: 28px;
+}
+
+.project-detail-section .prose + .role-list {
+  margin-top: 36px;
+}
+
 .section-head h2 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -830,9 +841,14 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--line-light);
   border-radius: 12px;
   width: 100%;
-  /* wireframe scans and live-app screenshots have different native
-     proportions — force both sides of a pair to the same frame so
-     neither looks bigger than the other */
+}
+
+/* RepQuest's wireframe scans and live-app screenshots have different
+   native proportions — force both sides of a pair to the same frame
+   so neither looks bigger than the other. Scoped to just that
+   comparison (not SafeSmart's storyboards, which are much wider and
+   would get cropped badly by a 4:3 frame). */
+.wireframe-compare img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: top;
@@ -841,6 +857,12 @@ img { max-width: 100%; display: block; }
 .section-dark .compare-pair img {
   border-color: var(--line-dark);
 }
+
+/* SafeSmart's two storyboard panel-pairs: each pair's own two sketches
+   have close-but-not-identical native ratios, so match them to each
+   other specifically (not to the 4:3 used for RepQuest above) */
+.scenario1-compare img { aspect-ratio: 7 / 3; object-fit: cover; object-position: center; }
+.scenario3-compare img { aspect-ratio: 15 / 8; object-fit: cover; object-position: center; }
 
 .compare-label {
   font-family: var(--font-mono);
@@ -1033,6 +1055,11 @@ img { max-width: 100%; display: block; }
   max-width: 200px;
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* real phone-screen exports, slightly different native ratios —
+     match them so the row reads as one consistent set */
+  aspect-ratio: 0.52 / 1;
+  object-fit: cover;
+  object-position: top;
 }
 
 .screen-card:hover img {
@@ -1078,6 +1105,11 @@ img { max-width: 100%; display: block; }
 .storyboard-frame:hover img {
   transform: scale(1.5);
   box-shadow: 0 10px 24px rgba(20, 30, 24, 0.25);
+}
+
+.storyboard-frame.no-zoom:hover img {
+  transform: none;
+  box-shadow: none;
 }
 
 .storyboard-frame figcaption {
@@ -1309,4 +1341,45 @@ a:focus-visible, .btn:focus-visible {
   .hero-actions { flex-direction: column; }
   .btn { text-align: center; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================
+   TEXT + SCREENS SIDE BY SIDE (e.g. SafeSmart's "Iterating on
+   Feedback") — text on the left, screenshots stacked on the right,
+   instead of screenshots stacking full-width below the text
+   ============================================ */
+.text-screens-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.text-screens-row .screen-grid {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 0;
+}
+@media (max-width: 800px) {
+  .text-screens-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   REFLECTION sub-groups (Strengths / Challenges / Future Work) —
+   a clear label per group instead of a plain sentence, so the
+   bullets underneath read as obviously belonging to that group
+   ============================================ */
+.subsection-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-top: 44px;
+  margin-bottom: 4px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-dark);
+}
+.subsection-label:first-of-type {
+  margin-top: 8px;
+  padding-top: 0;
+  border-top: none;
 }
