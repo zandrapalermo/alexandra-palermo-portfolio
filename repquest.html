@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Jost:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=47">
+<link rel="stylesheet" href="style.css?v=52">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
     <a href="index.html#work" class="back-link">← Back to work</a>
     <p class="eyebrow">Team Project · 5</p>
     <h1>RepQuest</h1>
-    <p class="project-hero-desc">A gamified workout tracker — structured routines, streaks, and unlockable achievements that turn consistency into a game.</p>
+    <p class="project-hero-desc">A gamified workout tracker with structured routines, streaks, and unlockable achievements that turn the consistency of going to the gym into a game.</p>
     <div class="project-hero-links">
       <a href="https://group-project-buffbuffs-repquest.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">Live app ↗</a>
       <a href="https://github.com/CU-CSCI3308-Fall2025/group-project-BuffBuffs-RepQuest" target="_blank" rel="noopener" class="btn btn-ghost">Repo ↗</a>
@@ -60,9 +60,9 @@
       <h2>What I worked on</h2>
     </div>
     <ul class="role-list">
-      <li><strong>Wireframing &amp; UX Design</strong> — Sketched wireframes for all 6 core screens; designed the gamified home-page pathway, iconography, and locked/unlocked state system.</li>
-      <li><strong>Frontend Development</strong> — Templated views in Handlebars; built the Profile page end-to-end, including image upload.</li>
-      <li><strong>Testing &amp; QA</strong> — Paired on Mocha/Chai unit tests for login; wrote UAT cases for error-state handling.</li>
+      <li><strong>Wireframing &amp; UX Design</strong> — Sketched wireframes for all 6 core parts and worked with scrum master to align wireframes with our UML; designed the gamified home-page pathway, iconography, and locked/unlocked state system.</li>
+      <li><strong>Frontend Development</strong> — Templated views in Handlebars; built the Profile page end-to-end, including profile image upload and a profile image backlog.</li>
+      <li><strong>Testing &amp; QA</strong> — Worked with another team member on Mocha/Chai unit tests for login; wrote UAT cases for error-state handling.</li>
       <li><strong>Agile / Scrum</strong> — Tracked work as user stories with story points; ran weekly sprint check-ins with the team and TA.</li>
       <li><strong>Visual Polish</strong> — Led a final UI consistency pass across every page.</li>
     </ul>
@@ -74,12 +74,12 @@
       <h2>Why this app</h2>
     </div>
     <div class="prose">
-      <p>Most fitness apps are built for people who already work out. RepQuest is built for people who don't yet, but want to — our target user is a college student in their late teens or early twenties who's never managed to stick with a gym routine before: motivated in theory, easily discouraged in practice by apps that feel like spreadsheets or gyms that feel unapproachable. Our team's vision statement put it plainly: turn fitness tracking into something closer to a game than a chore, so showing up starts to feel like progress instead of an obligation.</p>
+      <p>Most fitness apps are built for people who already work out. RepQuest is built for people who want to get started, and want something to hold them accountable. Our target user is a college student in their late teens or early twenties who's never managed to stick with a gym routine before: motivated in theory, easily discouraged in practice by lacking methods to keep them on-track or gyms that feel unapproachable. Our team's vision statement put it plainly: a way to turn fitness tracking into something closer to a game than a chore, so showing up starts to feel like progress instead of an obligation.</p>
     </div>
     <ul class="role-list">
-      <li><strong>Gamified Progression</strong> — A winding path of levels to climb, not a flat history list.</li>
-      <li><strong>Daily Streaks</strong> — Visible momentum that rewards showing up, not just logging data.</li>
-      <li><strong>Unlockable Achievements</strong> — Badges tied to real milestones: total workouts, muscle group, streak length.</li>
+      <li><strong>Gamified Progression</strong> — A winding path of levels to climb, that's meant to encourage a habit with visual progress.</li>
+      <li><strong>Daily Streaks</strong> — Visual proof of consistency, which provides a metric that's meant to motivate users to keep going.</li>
+      <li><strong>Unlockable Achievements</strong> — Badges tied to real milestones within various different categories: total workouts, muscle group, streak length.</li>
       <li><strong>Low-Friction Onboarding</strong> — Clean UI, simple navigation, and legible type so first-timers aren't intimidated before they even start.</li>
     </ul>
   </section>
@@ -96,7 +96,7 @@
         <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-home.jpg" alt="Hand-drawn wireframe of the RepQuest home page, showing a winding path of five workout levels between the header and the bottom nav."></figure>
         <figure><span class="compare-label">Final</span><img src="img/repquest/final-home.png" alt="Screenshot of the live RepQuest home page, showing the same winding workout path with real level icons on a gradient background."></figure>
       </div>
-      <p class="compare-caption">Shipped almost exactly as sketched. Hamburger menu → home icon; streak page → header counter.</p>
+      <p class="compare-caption">Shipped almost exactly as sketched. Only changes were: Hamburger menu → home icon; streak page fully scrapped → header streak counter.</p>
     </div>
 
     <div class="compare-block">
@@ -105,7 +105,7 @@
         <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-calendar.jpg" alt="Hand-drawn wireframe of the RepQuest calendar page, a seven-day week grid with a details line under each day."></figure>
         <figure><span class="compare-label">Final</span><img src="img/repquest/final-calendar.png" alt="Screenshot of the live RepQuest calendar page, showing a seven-day week with each day's assigned workout type."></figure>
       </div>
-      <p class="compare-caption">Same 7-day layout, now driven by real dates and push/pull/legs/rest data.</p>
+      <p class="compare-caption">Same 7-day layout, now has real-time dates and push/pull/legs/rest data.</p>
     </div>
 
     <div class="compare-block">
@@ -121,18 +121,27 @@
       <p class="compare-heading">Achievements</p>
       <div class="compare-pair wireframe-compare">
         <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-achievements.jpg" alt="Hand-drawn wireframe of the RepQuest achievements page, a 3-by-2 grid of empty badge placeholders."></figure>
-        <figure><span class="compare-label">Final</span><img src="img/repquest/final-achievements.png" alt="Screenshot of the live RepQuest achievements page for a guest account, reading 'No achievements to show yet.'"></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-achievements.png" alt="Screenshot of the live RepQuest achievements page, showing two unlocked workout badges alongside locked ones still greyed out."></figure>
       </div>
-      <p class="compare-caption">Fully personalized, trigger-driven badge system — this guest account just hasn't unlocked any yet.</p>
+      <p class="compare-caption">Fully personalized, trigger-driven badge system — unlocked badges light up in color, with the date earned.</p>
     </div>
 
     <div class="compare-block">
-      <p class="compare-heading">Streak &amp; Profile</p>
+      <p class="compare-heading">Profile</p>
       <div class="compare-pair wireframe-compare">
-        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-streak.jpg" alt="Hand-drawn wireframe of a dedicated RepQuest streak page, with a flame icon and day count."></figure>
         <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-profile.jpg" alt="Hand-drawn wireframe of the RepQuest profile page, with a side menu and a large information panel."></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-profile.png" alt="Screenshot of the live RepQuest profile page, with a profile picture, username, Change Profile Picture button, and Log Out button."></figure>
       </div>
-      <p class="compare-caption">Streak folded into the header counter. Profile (built by me, incl. picture upload) needs a real login to view.</p>
+      <p class="compare-caption">Built by me end-to-end, including the profile picture upload and a saved profile picture backlog.</p>
+    </div>
+
+    <div class="compare-block">
+      <p class="compare-heading">Streak</p>
+      <div class="compare-pair streak-compare">
+        <figure><span class="compare-label">Wireframe</span><img src="img/repquest/wireframe-streak.jpg" alt="Hand-drawn wireframe of a dedicated RepQuest streak page, with a flame icon and day count."></figure>
+        <figure><span class="compare-label">Final</span><img src="img/repquest/final-streak.png" alt="Screenshot of the live streak counter folded into the app header, reading a flame icon and 'Current streak: 1 days'."></figure>
+      </div>
+      <p class="compare-caption">Originally planned as its own page and ended up embedded in the header as a counter instead, since the flame + day count said enough on its own.</p>
     </div>
   </section>
 
@@ -143,13 +152,12 @@
         <h2>Designing the visual language</h2>
       </div>
       <div class="prose">
-        <p>Most of my day-to-day work here was visual design — deciding what a piece of state should look like before anyone touched a database.</p>
+        <p>Most of my day-to-day work on this project was visual design. I decided most of what a piece of state should look like before anything was properly implemented.</p>
       </div>
       <ul class="role-list">
-        <li><strong>Color-Coded States</strong> — Gray = locked, green = unlocked. No text required.</li>
+        <li><strong>Color-Coded States</strong> — Gray = locked, green = unlocked. A simple way to track progress visually.</li>
         <li><strong>Custom Iconography</strong> — One icon per workout type (push/pull/legs/rest), reused consistently across the path, workouts, and achievements.</li>
-        <li><strong>Gamification Pattern</strong> — A Duolingo-style winding path instead of a flat history list.</li>
-        <li><strong>Design System</strong> — One consistent visual language, not each screen inventing its own.</li>
+        <li><strong>Design System</strong> — One consistent visual language, making sure that a theme was maintained throughout.</li>
       </ul>
     </div>
 
@@ -198,10 +206,10 @@
       <h2>Challenges &amp; what I learned</h2>
     </div>
     <div class="prose">
-      <p>Extra-credit risk analysis, and what actually mattered once we were building:</p>
+      <p>For a 4 week long project, our team did a great job staying on track, and creating something we could be proud of. Besides that, there were some things we ran into and learned from:</p>
     </div>
     <ul class="role-list">
-      <li><strong>Responsive Design</strong> — Mobile-first mindset for a mobile-heavy audience.</li>
+      <li><strong>Responsive Design</strong> — Learning how to translate an app-style design onto a website. Our idea going into the project was that if we were to build on this project in the future, it would become a complete application. Obviously that did not happen, so we attempted mobile-driven design choices for a website instead.</li>
       <li><strong>Scope Management</strong> — Sized sprints against real availability, not wishful thinking.</li>
       <li><strong>Security Awareness</strong> — Flagged auth/DB risk early. (The real failure, months later: a free-tier expiration, not a breach.)</li>
       <li><strong>QA</strong> — Wrote UAT cases for error-state handling across onboarding, calendar, and home.</li>
@@ -214,6 +222,6 @@
   <p>Alexandra Palermo © 2026</p>
 </footer>
 
-<script src="script.js?v=47"></script>
+<script src="script.js?v=52"></script>
 </body>
 </html>

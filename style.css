@@ -858,6 +858,13 @@ img { max-width: 100%; display: block; }
   border-color: var(--line-dark);
 }
 
+/* RepQuest's Streak final shot is a tiny header snippet next to a
+   full-height wireframe — center it in its box instead of letting it
+   sit stuck to the top. */
+.streak-compare figure {
+  justify-content: center;
+}
+
 /* SafeSmart's two storyboard panel-pairs: each pair's own two sketches
    have close-but-not-identical native ratios, so match them to each
    other specifically (not to the 4:3 used for RepQuest above) */
