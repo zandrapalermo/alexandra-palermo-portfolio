@@ -7,8 +7,8 @@
 <meta name="description" content="RepQuest — a fitness app built by Alexandra Palermo and a five-person team to make a beginner's first weeks in the gym feel approachable.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Jost:wght@400&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=37">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Jost:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=38">
 </head>
 <body>
 
@@ -133,52 +133,58 @@
     </div>
   </section>
 
-  <section class="section section-dark project-detail-section">
-    <div class="section-head">
-      <p class="eyebrow">UI/UX Design</p>
-      <h2>Designing the visual language</h2>
-    </div>
-    <div class="prose">
-      <p>Most of my day-to-day work here was visual design — deciding what a piece of state should look like before anyone touched a database.</p>
-    </div>
-    <ul class="role-list">
-      <li><strong>Color-Coded States</strong> — Gray = locked, green = unlocked. No text required.</li>
-      <li><strong>Custom Iconography</strong> — One icon per workout type (push/pull/legs/rest), reused consistently across the path, workouts, and achievements.</li>
-      <li><strong>Gamification Pattern</strong> — A Duolingo-style winding path instead of a flat history list.</li>
-      <li><strong>Design System</strong> — One consistent visual language, not each screen inventing its own.</li>
-    </ul>
-
-    <div class="icon-showcase">
-      <p class="icon-showcase-label">Path Icons — Locked vs. Unlocked</p>
-      <div class="icon-grid">
-        <div class="icon-card"><img src="img/repquest/icons/node-push-locked.png" alt="Locked path icon for a push workout, shown in gray."><span>Push — Locked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-push-unlocked.png" alt="Unlocked path icon for a push workout, shown in green."><span>Push — Unlocked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-pull-locked.png" alt="Locked path icon for a pull workout, shown in gray."><span>Pull — Locked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-pull-unlocked.png" alt="Unlocked path icon for a pull workout, shown in green."><span>Pull — Unlocked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-legs-locked.png" alt="Locked path icon for a legs workout, shown in gray."><span>Legs — Locked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-legs-unlocked.png" alt="Unlocked path icon for a legs workout, shown in green."><span>Legs — Unlocked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-rest-locked.png" alt="Locked path icon for a rest day, shown in gray."><span>Rest — Locked</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/node-rest-unlocked.png" alt="Unlocked path icon for a rest day, shown in green."><span>Rest — Unlocked</span></div>
+  <section class="section section-dark project-detail-section visual-language-section">
+    <div class="vl-left">
+      <div class="section-head">
+        <p class="eyebrow">UI/UX Design</p>
+        <h2>Designing the visual language</h2>
       </div>
-    </div>
-
-    <div class="icon-showcase">
-      <p class="icon-showcase-label">Achievement Trophies</p>
-      <div class="icon-grid">
-        <div class="icon-card"><img src="img/repquest/icons/trophy-general.png" alt="General fitness milestone trophy, a gold cup with flexing arms."><span>General</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/trophy-push.png" alt="Push workout milestone trophy."><span>Push</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/trophy-pull.png" alt="Pull workout milestone trophy."><span>Pull</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/trophy-legs.png" alt="Legs workout milestone trophy."><span>Legs</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/trophy-rest.png" alt="Rest day milestone trophy."><span>Rest</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/trophy-streak.png" alt="Streak milestone trophy."><span>Streak</span></div>
+      <div class="prose">
+        <p>Most of my day-to-day work here was visual design — deciding what a piece of state should look like before anyone touched a database.</p>
       </div>
+      <ul class="role-list">
+        <li><strong>Color-Coded States</strong> — Gray = locked, green = unlocked. No text required.</li>
+        <li><strong>Custom Iconography</strong> — One icon per workout type (push/pull/legs/rest), reused consistently across the path, workouts, and achievements.</li>
+        <li><strong>Gamification Pattern</strong> — A Duolingo-style winding path instead of a flat history list.</li>
+        <li><strong>Design System</strong> — One consistent visual language, not each screen inventing its own.</li>
+      </ul>
     </div>
 
-    <div class="icon-showcase">
-      <p class="icon-showcase-label">Brand Marks</p>
-      <div class="icon-grid">
-        <div class="icon-card"><img src="img/repquest/icons/logo.png" alt="RepQuest logo."><span>Logo</span></div>
-        <div class="icon-card"><img src="img/repquest/icons/streak-icon.png" alt="Flame icon used for the streak counter."><span>Streak Flame</span></div>
+    <div class="vl-right">
+      <div class="icon-showcase">
+        <p class="icon-showcase-label">Path Icons — Locked vs. Unlocked</p>
+        <div class="icon-grid icon-grid-path">
+          <div class="icon-card"><img src="img/repquest/icons/node-push-locked.png" alt="Locked path icon for a push workout, shown in gray."><span>Push — Locked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-push-unlocked.png" alt="Unlocked path icon for a push workout, shown in green."><span>Push — Unlocked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-pull-locked.png" alt="Locked path icon for a pull workout, shown in gray."><span>Pull — Locked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-pull-unlocked.png" alt="Unlocked path icon for a pull workout, shown in green."><span>Pull — Unlocked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-legs-locked.png" alt="Locked path icon for a legs workout, shown in gray."><span>Legs — Locked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-legs-unlocked.png" alt="Unlocked path icon for a legs workout, shown in green."><span>Legs — Unlocked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-rest-locked.png" alt="Locked path icon for a rest day, shown in gray."><span>Rest — Locked</span></div>
+          <div class="icon-card"><img src="img/repquest/icons/node-rest-unlocked.png" alt="Unlocked path icon for a rest day, shown in green."><span>Rest — Unlocked</span></div>
+        </div>
+      </div>
+
+      <div class="showcase-row">
+        <div class="icon-showcase showcase-trophies">
+          <p class="icon-showcase-label">Achievement Trophies</p>
+          <div class="icon-grid icon-grid-trophies">
+            <div class="icon-card"><img src="img/repquest/icons/trophy-general.png" alt="General fitness milestone trophy, a gold cup with flexing arms."><span>General</span></div>
+            <div class="icon-card"><img src="img/repquest/icons/trophy-push.png" alt="Push workout milestone trophy."><span>Push</span></div>
+            <div class="icon-card"><img src="img/repquest/icons/trophy-pull.png" alt="Pull workout milestone trophy."><span>Pull</span></div>
+            <div class="icon-card"><img src="img/repquest/icons/trophy-legs.png" alt="Legs workout milestone trophy."><span>Legs</span></div>
+            <div class="icon-card"><img src="img/repquest/icons/trophy-rest.png" alt="Rest day milestone trophy."><span>Rest</span></div>
+            <div class="icon-card"><img src="img/repquest/icons/trophy-streak.png" alt="Streak milestone trophy."><span>Streak</span></div>
+          </div>
+        </div>
+
+        <div class="icon-showcase showcase-brand">
+          <p class="icon-showcase-label">Brand Marks</p>
+          <div class="icon-grid icon-grid-brand">
+            <div class="icon-card"><img src="img/repquest/icons/logo.png" alt="RepQuest logo."><span>Logo</span></div>
+            <div class="icon-card"><img src="img/repquest/icons/streak-icon.png" alt="Flame icon used for the streak counter."><span>Streak Flame</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -205,6 +211,6 @@
   <p>Alexandra Palermo © 2026</p>
 </footer>
 
-<script src="script.js?v=37"></script>
+<script src="script.js?v=38"></script>
 </body>
 </html>

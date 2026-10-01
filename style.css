@@ -32,9 +32,9 @@
   --line-dark: rgba(238, 242, 234, 0.16);
   --line-light: rgba(23, 40, 31, 0.13);
 
-  /* Orientation Memo pairing: Poppins headline / Jost body / Work Sans
-     for the wordmark, nav, eyebrows, tags and labels */
-  --font-display: 'Poppins', sans-serif;
+  /* Newsreader headline / Jost body / Work Sans for the wordmark, nav,
+     eyebrows, tags and labels */
+  --font-display: 'Newsreader', serif;
   --font-display-weight: 500;
   --font-body: 'Jost', 'Sansation', sans-serif;
   --font-mono: 'Work Sans', sans-serif;
@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
 
 .nav-mark {
   font-family: var(--font-mono);
-  font-weight: var(--font-display-weight, 600);
+  font-weight: 600;
   font-size: 1.1rem;
   color: var(--text-light);
   transition: color 0.3s ease;
@@ -235,9 +235,9 @@ img { max-width: 100%; display: block; }
    it, so margin-bottom (not margin-right) is what creates the gap. */
 .hero-greeting {
   display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.6667em;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 0.45em;
+  font-weight: 300;
   letter-spacing: normal;
   text-transform: none;
   color: var(--accent);
@@ -248,8 +248,8 @@ img { max-width: 100%; display: block; }
 .hero h1 {
   position: relative;
   font-family: var(--font-display);
-  font-weight: var(--font-display-weight, 600);
-  font-size: clamp(3.2rem, 9vw, 6.4rem);
+  font-weight: 300;
+  font-size: clamp(3.4rem, 9.6vw, 7.2rem);
   line-height: 0.98;
   letter-spacing: -0.01em;
   margin-bottom: 52px;
@@ -260,9 +260,9 @@ img { max-width: 100%; display: block; }
 .hero h1::after {
   content: '';
   position: absolute;
-  left: 2.05em;
+  left: 1.3em;
   top: 0.62em;
-  width: 2.1em;
+  width: 2.85em;
   height: 2px;
   background: var(--accent);
 }
@@ -360,7 +360,7 @@ img { max-width: 100%; display: block; }
    ============================================ */
 .section {
   padding: 120px 6vw;
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -386,7 +386,7 @@ img { max-width: 100%; display: block; }
 
 .section-head h2 {
   font-family: var(--font-display);
-  font-weight: var(--font-display-weight, 600);
+  font-weight: 400;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   letter-spacing: -0.01em;
 }
@@ -494,7 +494,7 @@ img { max-width: 100%; display: block; }
 
 .project-card h3 {
   font-family: var(--font-display);
-  font-weight: var(--font-display-weight, 600);
+  font-weight: 500;
   font-size: 1.5rem;
   color: #D9F0EC;
   text-shadow: 0 0 14px rgba(157, 224, 213, 0.35);
@@ -615,7 +615,7 @@ img { max-width: 100%; display: block; }
 .project-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1100px;
 }
 
 .back-link {
@@ -633,7 +633,7 @@ img { max-width: 100%; display: block; }
 
 .project-hero h1 {
   font-family: var(--font-display);
-  font-weight: var(--font-display-weight, 600);
+  font-weight: 300;
   font-size: clamp(2.6rem, 6vw, 4.5rem);
   line-height: 1;
   letter-spacing: -0.01em;
@@ -643,7 +643,7 @@ img { max-width: 100%; display: block; }
 .project-hero-desc {
   font-size: 1.15rem;
   color: var(--muted-light);
-  max-width: 680px;
+  max-width: 900px;
   margin-bottom: 32px;
 }
 
@@ -663,7 +663,7 @@ img { max-width: 100%; display: block; }
 }
 
 .prose {
-  max-width: 720px;
+  max-width: 980px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -672,14 +672,19 @@ img { max-width: 100%; display: block; }
 
 .section-dark .prose { color: var(--muted-light); }
 
-/* scannable skill/contribution list — bullet-led, keyword-first */
+/* scannable skill/contribution list — bullet-led, keyword-first —
+   2 columns so a 4-6 item list doesn't stretch so tall */
 .role-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 720px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 40px;
+  max-width: 980px;
   font-size: 1rem;
   margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+  .role-list { grid-template-columns: 1fr; }
 }
 
 .role-list li {
@@ -721,7 +726,7 @@ img { max-width: 100%; display: block; }
   border-left: 3px solid var(--accent);
   padding-left: 20px;
   margin: 24px 0;
-  max-width: 640px;
+  max-width: 900px;
   font-style: italic;
   color: var(--muted-dark);
 }
@@ -780,7 +785,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
   white-space: pre-wrap;
   overflow-x: auto;
-  max-width: 720px;
+  max-width: 980px;
   border: 1px solid var(--line-dark);
 }
 
@@ -825,12 +830,12 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--line-light);
   border-radius: 12px;
   width: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.compare-pair figure:hover img {
-  transform: scale(1.5);
-  box-shadow: 0 10px 24px rgba(20, 30, 24, 0.25);
+  /* wireframe scans and live-app screenshots have different native
+     proportions — force both sides of a pair to the same frame so
+     neither looks bigger than the other */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
 }
 
 .section-dark .compare-pair img {
@@ -933,6 +938,39 @@ img { max-width: 100%; display: block; }
 
 .section-dark .icon-card span {
   color: var(--muted-light);
+}
+
+/* "Designing the visual language" layout: title + bullets on the left,
+   icon showcases stacked on the right */
+.visual-language-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.visual-language-section .role-list { grid-template-columns: 1fr; max-width: none; }
+.visual-language-section .icon-showcase:first-child { margin-top: 0; }
+@media (max-width: 900px) {
+  .visual-language-section { grid-template-columns: 1fr; }
+}
+
+/* path icons: 2 rows x 4 columns */
+.icon-grid-path { grid-template-columns: repeat(4, 1fr); }
+
+/* achievements + brand marks sit side by side, both 2 rows tall */
+.showcase-row {
+  display: flex;
+  gap: 24px;
+  align-items: start;
+}
+.showcase-row .icon-showcase { margin-top: 0; margin-bottom: 0; }
+.showcase-trophies { flex: 1 1 auto; }
+.icon-grid-trophies { grid-template-columns: repeat(3, 1fr); }
+.showcase-brand { flex: 0 0 140px; }
+.icon-grid-brand { grid-template-columns: repeat(1, 1fr); }
+@media (max-width: 600px) {
+  .showcase-row { flex-direction: column; }
+  .showcase-brand { flex-basis: auto; }
 }
 
 /* research chart / data callout grid */
