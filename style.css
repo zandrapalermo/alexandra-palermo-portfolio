@@ -1233,20 +1233,37 @@ img { max-width: 100%; display: block; }
   }
 }
 
-/* photo placeholder — replace with the real photo when ready */
-.hero-photo-placeholder {
-  width: 220px;
-  aspect-ratio: 3 / 4;
-  border: 2px dashed var(--line-dark);
+/* hero portrait — an offset accent outline peeking out behind the
+   photo for depth, and the photo itself fading into the dark
+   background at the bottom instead of ending in a hard edge */
+.hero-photo {
+  position: relative;
+  width: 360px;
+  margin-left: auto;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1.5px solid var(--accent);
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--muted-light);
+  z-index: 0;
+}
+
+.hero-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 /* ============================================
