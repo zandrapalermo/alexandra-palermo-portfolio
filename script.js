@@ -273,3 +273,53 @@ document.querySelectorAll('.about-carousel').forEach(carousel => {
   prevBtn.addEventListener('click', () => goTo(index - 1));
   nextBtn.addEventListener('click', () => goTo(index + 1));
 });
+
+// Lightbox — tap any image on a project page (wireframes, screenshots,
+// icon grids, charts) to see it at full size, since a lot of them are
+// too small to make out at card size on a phone.
+const lightboxImages = document.querySelectorAll('.project-detail-section img');
+
+if (lightboxImages.length) {
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+
+  const overlayImg = document.createElement('img');
+  const closeBtn = document.createElement('button');
+  closeBtn.type = 'button';
+  closeBtn.className = 'lightbox-close';
+  closeBtn.setAttribute('aria-label', 'Close');
+  closeBtn.textContent = '✕';
+
+  overlay.append(overlayImg, closeBtn);
+  document.body.appendChild(overlay);
+
+  function openLightbox(src, alt) {
+    overlayImg.src = src;
+    overlayImg.alt = alt || '';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  lightboxImages.forEach(img => {
+    img.classList.add('lightbox-trigger');
+    img.addEventListener('click', () => openLightbox(img.currentSrc || img.src, img.alt));
+  });
+
+  // Close on backdrop click, but not when the click is on the
+  // (already full-size) image itself.
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target === closeBtn) closeLightbox();
+  });
+  overlayImg.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeLightbox();
+  });
+}

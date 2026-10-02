@@ -273,7 +273,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-pitch {
-  font-size: clamp(0.53rem, 1.5vw, 1.07rem);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.07rem);
   line-height: 1.4;
   color: var(--muted-light);
   max-width: 640px;
@@ -1243,7 +1243,7 @@ img { max-width: 100%; display: block; }
    background at the bottom instead of ending in a hard edge */
 .hero-photo {
   position: relative;
-  width: 300px;
+  width: min(300px, 62vw);
   margin: 0 auto;
 }
 
@@ -1257,6 +1257,13 @@ img { max-width: 100%; display: block; }
    .hero-visual's box model at this breakpoint would shrink the space
    it needs and shift the real wrap point out from under this rule. */
 @media (max-width: 1250px) {
+  /* gap is meant as the horizontal space between the text and photo
+     columns side by side — once they wrap onto stacked rows here, the
+     same value became a huge vertical gap between them instead */
+  .hero-content {
+    gap: 48px;
+  }
+
   .hero-visual {
     margin: 0 auto;
   }
@@ -1524,4 +1531,64 @@ a:focus-visible, .btn:focus-visible {
 .carousel-dot.active {
   background: var(--accent);
   transform: scale(1.3);
+}
+
+/* ============================================
+   LIGHTBOX — tap any project-page image to see it
+   bigger, since a lot of them (screenshots, wireframes,
+   icon grids) are hard to make out at mobile card size.
+   ============================================ */
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: rgba(12, 20, 17, 0.92);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line-dark);
+  background: rgba(230, 234, 227, 0.1);
+  color: var(--text-light);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--accent);
+  color: var(--text-dark);
 }
