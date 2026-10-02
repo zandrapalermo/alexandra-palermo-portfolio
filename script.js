@@ -1,3 +1,48 @@
+// Section links (Work/Skills/About/Contact) use clean paths like
+// /work instead of hash fragments like /#work — Vercel rewrites those
+// paths to this same page, so on the homepage we just need to smooth
+// -scroll to the right section and swap in the clean URL ourselves
+// instead of letting the browser do a hash jump.
+const SECTION_IDS = ['work', 'skills', 'about', 'contact'];
+
+function scrollToSection(id, behavior) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior });
+}
+
+// Landing directly on /work (a fresh load, a bookmark, or arriving
+// from another page's link) — jump straight there once the page has
+// laid out, no visible scroll animation needed for an initial landing.
+(() => {
+  const path = window.location.pathname.replace(/^\/|\/$/g, '');
+  if (SECTION_IDS.includes(path)) {
+    window.addEventListener('load', () => scrollToSection(path, 'auto'));
+  }
+})();
+
+// Clicking a section link while already on the homepage: scroll
+// smoothly and push the clean URL, rather than navigating away.
+document.querySelectorAll('a[href]').forEach(link => {
+  const path = link.getAttribute('href').replace(/^\//, '');
+  if (!SECTION_IDS.includes(path)) return;
+  link.addEventListener('click', (e) => {
+    if (!document.getElementById(path)) return;
+    e.preventDefault();
+    scrollToSection(path, 'smooth');
+    history.pushState(null, '', `/${path}`);
+  });
+});
+
+// Browser back/forward between section URLs on the homepage.
+window.addEventListener('popstate', () => {
+  const path = window.location.pathname.replace(/^\/|\/$/g, '');
+  if (SECTION_IDS.includes(path)) {
+    scrollToSection(path, 'smooth');
+  } else if (document.getElementById('top')) {
+    scrollToSection('top', 'smooth');
+  }
+});
+
 // Nav background state on scroll
 const nav = document.getElementById('nav');
 const hero = document.querySelector('.hero, .project-hero');
