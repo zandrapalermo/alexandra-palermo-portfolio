@@ -1553,7 +1553,11 @@ a:focus-visible, .btn:focus-visible {
   background: rgba(12, 20, 17, 0.92);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease;
+  /* visibility is a discrete property, but transitioning it alongside
+     opacity delays the switch to hidden until the fade-out actually
+     finishes, instead of the overlay vanishing the instant the class
+     is removed. */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .lightbox-overlay.open {
@@ -1567,6 +1571,12 @@ a:focus-visible, .btn:focus-visible {
   border-radius: 8px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   cursor: zoom-out;
+  transform: scale(0.94);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lightbox-overlay.open img {
+  transform: scale(1);
 }
 
 .lightbox-close {
