@@ -1243,7 +1243,7 @@ img { max-width: 100%; display: block; }
    background at the bottom instead of ending in a hard edge */
 .hero-photo {
   position: relative;
-  width: min(300px, 62vw);
+  width: min(300px, 54vw);
   margin: 0 auto;
 }
 
