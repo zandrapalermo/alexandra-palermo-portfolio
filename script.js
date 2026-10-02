@@ -28,6 +28,69 @@ revealTargets.forEach(el => {
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Hero entrance — the same lift-and-fade used for scroll-reveal
+// elsewhere on the page, staggered piece by piece. Triggered by an
+// IntersectionObserver like everything else, but re-armed on exit so
+// it replays every time the hero scrolls back into view instead of
+// only once per visit.
+const heroSection = document.querySelector('.hero');
+const heroReveal = [
+  { el: document.querySelector('.hero h1'), delay: 0 },
+  { el: document.querySelector('.hero-pitch'), delay: 220 },
+  { el: document.querySelector('.hero-actions'), delay: 420 },
+  { el: document.querySelector('.hero-photo'), delay: 300 },
+].filter(item => item.el);
+
+if (prefersReducedMotion) {
+  heroReveal.forEach(({ el }) => { el.style.opacity = '1'; });
+} else if (heroSection && heroReveal.length) {
+  heroReveal.forEach(({ el }) => {
+    el.style.transition = 'opacity 1.1s ease, transform 1.1s ease';
+  });
+
+  let heroTimeouts = [];
+
+  const hideHero = () => {
+    heroTimeouts.forEach(clearTimeout);
+    heroTimeouts = [];
+    heroReveal.forEach(({ el }) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+    });
+  };
+
+  const playHeroReveal = () => {
+    heroTimeouts.forEach(clearTimeout);
+    heroTimeouts = [];
+    // Double rAF guarantees the opacity:0 state actually paints once
+    // before it changes — without it, a delay of 0 can get batched
+    // with the initial style and skip the transition entirely.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        heroReveal.forEach(({ el, delay }) => {
+          heroTimeouts.push(setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, delay));
+        });
+      });
+    });
+  };
+
+  hideHero();
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        playHeroReveal();
+      } else {
+        hideHero();
+      }
+    });
+  }, { threshold: 0.2 });
+  heroObserver.observe(heroSection);
+}
+
 // Ambient MDR number field — a dense, slowly drifting sea of digits behind
 // the skills grid, echoing the Macrodata Refinement work screens.
 function buildMdrField(section) {
