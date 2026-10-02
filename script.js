@@ -198,3 +198,33 @@ document.querySelectorAll('.project-card[data-href]').forEach(card => {
     window.location.href = card.dataset.href;
   });
 });
+
+// About section's small photo carousel — prev/next buttons plus
+// dots, looping in both directions.
+document.querySelectorAll('.about-carousel').forEach(carousel => {
+  const track = carousel.querySelector('.about-carousel-track');
+  const slides = Array.from(carousel.querySelectorAll('.about-carousel-slide'));
+  const dotsWrap = carousel.querySelector('.carousel-dots');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  let index = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to photo ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+  }
+
+  prevBtn.addEventListener('click', () => goTo(index - 1));
+  nextBtn.addEventListener('click', () => goTo(index + 1));
+});

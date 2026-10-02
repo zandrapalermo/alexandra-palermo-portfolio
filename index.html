@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Jost:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=61">
+<link rel="stylesheet" href="style.css?v=75">
 </head>
 <body>
 
@@ -192,9 +192,24 @@
       <p class="eyebrow">03 — About</p>
       <h2>A little about me</h2>
     </div>
-    <div class="prose">
-      <p>I'm a Computer Science student who's just as interested in how something looks and feels as how it works under the hood. My coursework has taken me from data structures and algorithms to full-stack web development, and I round it out with design coursework — wireframing, prototyping, and thinking through how a real person will actually use what I build.</p>
-      <p class="placeholder-text">[Add a paragraph here about your school, expected graduation, and what kind of internship you're looking for.]</p>
+    <div class="about-layout">
+      <div class="prose">
+        <p>I'm a Computer Science student who cares as much about how something looks and feels as how it works — pairing algorithms and full-stack development with UX coursework like wireframing and prototyping.</p>
+        <p class="placeholder-text">[Add a line about your school, graduation date, and the internship you're looking for.]</p>
+      </div>
+
+      <div class="about-carousel">
+        <div class="about-carousel-track">
+          <figure class="about-carousel-slide"><img src="img/about/placeholder-1.jpg" alt="Placeholder photo 1"></figure>
+          <figure class="about-carousel-slide"><img src="img/about/placeholder-2.jpg" alt="Placeholder photo 2"></figure>
+          <figure class="about-carousel-slide"><img src="img/about/placeholder-3.jpg" alt="Placeholder photo 3"></figure>
+          <figure class="about-carousel-slide"><img src="img/about/placeholder-4.jpg" alt="Placeholder photo 4"></figure>
+          <figure class="about-carousel-slide"><img src="img/about/placeholder-5.jpg" alt="Placeholder photo 5"></figure>
+        </div>
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">←</button>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Next photo">→</button>
+        <div class="carousel-dots" aria-hidden="true"></div>
+      </div>
     </div>
   </section>
 
@@ -230,6 +245,6 @@
   <p>Alexandra Palermo © 2026</p>
 </footer>
 
-<script src="script.js?v=61"></script>
+<script src="script.js?v=75"></script>
 </body>
 </html>
