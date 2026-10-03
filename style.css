@@ -1151,6 +1151,29 @@ img { max-width: 100%; display: block; }
   .screenshot-grid { grid-template-columns: 1fr; }
 }
 
+/* Homepage project cards read as a wall of text once they stack to
+   one column on mobile — truncate with an ellipsis instead of
+   shrinking the font or cutting content from the markup, so the
+   full description/role is still there for screen readers and the
+   project's own detail page has the whole story anyway. */
+@media (max-width: 600px) {
+  .project-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .project-role {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 /* ============================================
    SKILLS
    ============================================ */
